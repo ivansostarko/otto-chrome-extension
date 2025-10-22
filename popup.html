@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OTTO Encryptor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>OTTO Encryptor</h1>
+    <p class="sub">AES‑256‑GCM • HKDF • Chunked • Wire‑compatible with Laravel SDK</p>
+  </header>
+
+  <section class="card">
+    <h2>Key</h2>
+    <div class="row">
+      <input id="keyB64" placeholder="Base64 32‑byte key (leave empty to generate)"/>
+      <button id="genKey">Generate</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Text</h2>
+    <textarea id="plain" placeholder="Enter plaintext"></textarea>
+    <div class="row">
+      <button id="encText">Encrypt</button>
+      <button id="decText">Decrypt</button>
+    </div>
+    <label>Header (Base64)</label>
+    <textarea id="headerB64" readonly></textarea>
+    <label>Cipher (Base64 ct||tag)</label>
+    <textarea id="cipherB64" readonly></textarea>
+    <label>Decrypted</label>
+    <textarea id="decrypted" readonly></textarea>
+  </section>
+
+  <section class="card">
+    <h2>Files (photo/audio/video/any)</h2>
+    <input id="fileIn" type="file"/>
+    <div class="row">
+      <button id="encFile">Encrypt → .otto</button>
+      <button id="decFile">Decrypt .otto</button>
+    </div>
+    <div id="status"></div>
+  </section>
+
+  <footer>
+    <small>MIT © 2025 Ivan Doe • OTTO format: Header | HKDF keys | HKDF‑SIV nonces | AES‑GCM | Streaming</small>
+  </footer>
+
+  <script src="otto.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

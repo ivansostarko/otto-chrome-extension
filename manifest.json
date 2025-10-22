@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "OTTO Encryptor",
+  "description": "End-to-end encryption for text and files using the OTTO format (AES-256-GCM + HKDF, streaming chunks).",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "OTTO",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [],
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}
